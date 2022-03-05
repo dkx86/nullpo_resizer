@@ -1,3 +1,21 @@
+/**
+ * nullpo_resizer - Console tool for resizing JPG files.
+ * Copyright (C) 2022  Dmitry Kuznetsov aka dkx86
+ * <p>
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * <p>
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * <p>
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package ru.dkx86.nullporesizer;
 
 import org.jetbrains.annotations.NotNull;
@@ -113,14 +131,25 @@ public class Main {
     }
 
     private static void printHelp() {
-        info("Available commands:");
-        info("-f <path/to/file> <MAX_SIDE_SIZE> - resize one image.");
-        info("-d <path/to/directory> <MAX_SIDE_SIZE> - resize all images in the directory.");
-        info("Where <MAX_SIDE_SIZE> is a size of the longest side of the image, digits or alias.");
-        info("Aliases for <MAX_SIDE_SIZE>:");
-        info("hd  -> 1280");
-        info("fhd -> 1920");
-        info("uhd -> 3048");
+        print("nullpo_resizer v1.0  Copyright (C) 2022  Dmitry Kuznetsov aka dkx86");
+        print("This program comes with ABSOLUTELY NO WARRANTY; for details read `show w'.");
+        print("This is free software, and you are welcome to redistribute it");
+        print("under certain conditions; read LICENSE file or visit <https://www.gnu.org/licenses/> for details.\n");
+
+        print("Available commands:");
+        print("-f <path/to/file> <MAX_SIDE_SIZE> - resize one image.");
+        print("-d <path/to/directory> <MAX_SIDE_SIZE> - resize all images in the directory.");
+        print("Where <MAX_SIDE_SIZE> is a size of the longest side of the image, digits or alias.\n");
+        print("Aliases for <MAX_SIDE_SIZE>:");
+        print("hd  -> 1280");
+        print("fhd -> 1920");
+        print("uhd -> 3048");
+
+
+    }
+
+    private static void print(@NotNull String msg) {
+        System.out.println(msg);
     }
 
     private static void info(@NotNull String msg) {
