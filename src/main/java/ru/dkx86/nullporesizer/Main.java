@@ -112,7 +112,7 @@ public class Main {
         if (!dir.isDirectory())
             return null;
 
-        return dir.listFiles(file -> file.isFile() && file.getName().endsWith("jpg"));
+        return dir.listFiles(file -> file.isFile() && file.getName().toLowerCase(Locale.ROOT).endsWith("jpg"));
     }
 
     private static void resizeOneFile(@NotNull String sourcePath, int size) {
